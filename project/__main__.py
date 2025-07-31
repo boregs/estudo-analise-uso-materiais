@@ -16,8 +16,7 @@ class coleta_dados_materiais:
         # Cria um DataFrame a partir da lista de dicionários
         df_teste = pd.DataFrame(linhas_completas)
         return df_teste
-
-
+    
     def materiais_terca():
         df = pd.read_excel(r'project\database\TESTE.xlsx')
         terca_df = df[df['DIA'] == 'terca']
@@ -60,12 +59,13 @@ class media_semanal_materiais:
     @staticmethod
     
     def calculo():
-        df = pd.read_excel(r'project\database\TESTE.xlsx')
-        # Calcula a média de cada coluna numérica
-        media = df.mean(numeric_only=True)
-        # Converte a série de médias em um DataFrame
-        media_df = pd.DataFrame(media).T
-        return media_df
+        #coleta os dataframes de cada dia da semana
+        coleta_dados_materiais.materiais_segunda().to_dict(orient='records', number_format=True)
+        coleta_dados_materiais.materiais_terca().to_dict(orient='records', number_format=True)
+        coleta_dados_materiais.materiais_quarta().to_dict(orient='records', number_format=True)
+        coleta_dados_materiais.materiais_quinta().to_dict(orient='records', number_format=True)
+        coleta_dados_materiais.materiais_sexta().to_dict(orient='records', number_format=True)
+        return 
 
 print(media_semanal_materiais.calculo())
 
