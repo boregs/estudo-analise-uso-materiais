@@ -4,48 +4,71 @@ import numpy as np
 import seaborn as sns
 
 df = pd.read_excel(r'project\database\TESTE.xlsx')
-def main():
-    return 0
-
-class calculo_media_semanal:
-
+class coleta_dados_materiais:
+#isso tudo coleta os dados do excel, os coloca em um dataframe e depois transforma em uma lista de dicionários, que então é transformada em um dataframe novamente 
+#para que possa ser utilizado no matplotlib e seaborn posteriormente
     @staticmethod
     def materiais_segunda():
         df = pd.read_excel(r'project\database\TESTE.xlsx')
-        materiais_segunda = []
         segunda_df = df[df['DIA'] == 'segunda']
-        # Adiciona os produtos dessas linhas na lista
-        materiais_segunda = segunda_df['Nome Produtos'].tolist()
-        return materiais_segunda
+        # Converte cada linha filtrada em um dicionário
+        linhas_completas = segunda_df.to_dict(orient='records')
+        # Cria um DataFrame a partir da lista de dicionários
+        df_teste = pd.DataFrame(linhas_completas)
+        return df_teste
+
 
     def materiais_terca():
         df = pd.read_excel(r'project\database\TESTE.xlsx')
-        materiais_terca = []
         terca_df = df[df['DIA'] == 'terca']
-        # Adiciona os produtos dessas linhas na lista
-        materiais_terca = terca_df['Nome Produtos'].tolist()
-        return materiais_terca
+        # Converte cada linha filtrada em um dicionário
+        linhas_completas = terca_df.to_dict(orient='records')
+        # Cria um DataFrame a partir da lista de dicionários
+        df_teste = pd.DataFrame(linhas_completas)
+        return df_teste
     
     def materiais_quarta():
         df = pd.read_excel(r'project\database\TESTE.xlsx')
-        materiais_quarta = []
         quarta_df = df[df['DIA'] == 'quarta']
-        # Adiciona os produtos dessas linhas na lista
-        materiais_quarta = quarta_df['Nome Produtos'].tolist()
-        return materiais_quarta
+        # Converte cada linha filtrada em um dicionário
+        linhas_completas = quarta_df.to_dict(orient='records')
+        # Cria um DataFrame a partir da lista de dicionários
+        df_teste = pd.DataFrame(linhas_completas)
+        return df_teste
     
     def materiais_quinta():
         df = pd.read_excel(r'project\database\TESTE.xlsx')
         materiais_quinta = []
         quinta_df = df[df['DIA'] == 'quinta']
-        # Adiciona os produtos dessas linhas na lista
-        materiais_quinta = quinta_df['Nome Produtos'].tolist()
-        return materiais_quinta
+        linhas_completas = quinta_df.to_dict(orient='records')
+        # Cria um DataFrame a partir da lista de dicionários
+        df_teste = pd.DataFrame(linhas_completas)
+        return df_teste
     
     def materiais_sexta():
         df = pd.read_excel(r'project\database\TESTE.xlsx')
         materiais_sexta = []
         sexta_df = df[df['DIA'] == 'sexta']
         # Adiciona os produtos dessas linhas na lista
-        materiais_sexta = sexta_df['Nome Produtos'].tolist()
-        return materiais_sexta
+        linhas_completas = sexta_df.to_dict(orient='records')
+        # Cria um DataFrame a partir da lista de dicionários
+        df_teste = pd.DataFrame(linhas_completas)
+        return df_teste
+
+
+class media_semanal_materiais:
+    @staticmethod
+    
+    def calculo():
+        df = pd.read_excel(r'project\database\TESTE.xlsx')
+        # Calcula a média de cada coluna numérica
+        media = df.mean(numeric_only=True)
+        # Converte a série de médias em um DataFrame
+        media_df = pd.DataFrame(media).T
+        return media_df
+
+print(media_semanal_materiais.calculo())
+
+
+
+
