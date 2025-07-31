@@ -55,7 +55,7 @@ class coleta_dados_materiais:
         df_teste = pd.DataFrame(linhas_completas)
         return df_teste
 
-
+#classe para o calculo da media em si
 class media_semanal_materiais:
     @staticmethod
     
