@@ -17,7 +17,24 @@ df_segunda["segunda-feira, 28 de julho de 2025"] = df_segunda["segunda-feira, 28
 #print(df_segunda.head())
 #print(df_segunda.isnull().sum())
 
-# limpando planilha de terça
 
+# limpando planilha de terça
 df_terca = df['TERÇAS']
 df_terca = df_terca.drop_duplicates()
+
+#print(df_terca.isnull().sum())
+
+df_terca = df_terca.fillna(0) # transforma valores nulos de itens recentemente adicionados em 0
+
+df_terca["terça-feira, 12 de agosto de 2025"] = df_terca["terça-feira, 12 de agosto de 2025"].fillna(df_terca["segunda-feira, 4 de agosto de 2025"])
+df_terca["terça-feira, 27 de maio de 2025"] = df_terca["terça-feira, 27 de maio de 2025"].fillna(df_terca["terça-feira, 20 de maio de 2025"])
+df_terca["terça-feira, 19 de agosto de 2025"] = df_terca["terça-feira, 19 de agosto de 2025"].fillna(df_terca["terça-feira, 12 de agosto de 2025"])
+
+
+#limpando planilha de quarta
+df_quarta = df['QUARTAS']
+df_quarta = df_quarta.drop_duplicates()
+#print(df_quarta.isnull().sum())
+
+df_quarta = df_quarta.fillna(0)
+df_quarta["quarta-feira, 2 de julho de 2025"] = df_quarta["quarta-feira, 2 de julho de 2025"].fillna(df_quarta[""])
