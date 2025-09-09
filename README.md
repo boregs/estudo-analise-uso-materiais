@@ -43,3 +43,8 @@ Sinta-se à vontade para explorar o código, sugerir melhorias ou utilizá-lo co
 ---
 
 **Conecte-se comigo:** [Meu LinkedIn](https://www.linkedin.com/in/rafaelboregs/)
+
+<p align="center">
+<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
+
