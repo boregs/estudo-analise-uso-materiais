@@ -12,7 +12,7 @@ O desafio central era transformar dados brutos de consumo e estoque em insights 
 
 ## Metodologia e Tecnologias Utilizadas 🛠️
 
-O projeto seguiu as etapas de um fluxo de trabalho de análise de dados (ETL - Extração, Transformação e Carga), utilizando as seguintes tecnologias:
+O projeto seguiu as etapas de um fluxo de trabalho de análise de dados (ETL - Extração, Transformação e Load), utilizando as seguintes tecnologias:
 
 * **Linguagem de Programação:** Python
 * **Manipulação e Análise de Dados:** Pandas
