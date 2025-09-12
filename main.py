@@ -1,12 +1,19 @@
 import pandas as pd
 
+<<<<<<< HEAD
 # ---- 
 
+=======
+>>>>>>> f914c37b9860667a7f9a7f6b337660c3e5208591
 databases = ['SEGUNDAS','TERCAS','QUARTAS','QUINTAS','SEXTAS']
 df = pd.read_excel(r"database\DATABASE_ATUALIZADA.xlsx", sheet_name=databases)
 df_segunda = df['SEGUNDAS']
 
+<<<<<<< HEAD
 # ---- limpando planilha de segunda ----
+=======
+# limpando planilha de segunda
+>>>>>>> f914c37b9860667a7f9a7f6b337660c3e5208591
 
 df_segunda = df['SEGUNDAS']
 df_segunda = df_segunda.drop_duplicates()
@@ -22,8 +29,13 @@ df_segunda["segunda-feira, 19 de maio de 2025"] = df_segunda['segunda-feira, 19 
 #print(df_segunda.isnull().sum())
 
 
+<<<<<<< HEAD
 # ---- limpando planilha de terça ----
 df_terca = df['TERCAS']
+=======
+# limpando planilha de terça
+df_terca = df['TERÇAS']
+>>>>>>> f914c37b9860667a7f9a7f6b337660c3e5208591
 df_terca = df_terca.drop_duplicates()
 
 #print(df_terca.isnull().sum())
@@ -35,6 +47,7 @@ df_terca["terça-feira, 27 de maio de 2025"] = df_terca["terça-feira, 27 de mai
 df_terca["terça-feira, 19 de agosto de 2025"] = df_terca["terça-feira, 19 de agosto de 2025"].fillna(df_terca["terça-feira, 12 de agosto de 2025"])
 
 
+<<<<<<< HEAD
 # ---- limpando planilha de quarta ----
 df_quarta = df['QUARTAS']
 df_quarta = df_quarta.drop_duplicates()
@@ -96,3 +109,12 @@ for name_aba, df in dataframes_dos_dias.items():
     df.to_excel(writer,sheet_name=name_aba, index=False)
 
 writer.close()
+=======
+#limpando planilha de quarta
+df_quarta = df['QUARTAS']
+df_quarta = df_quarta.drop_duplicates()
+#print(df_quarta.isnull().sum())
+
+df_quarta = df_quarta.fillna(0)
+df_quarta["quarta-feira, 2 de julho de 2025"] = df_quarta["quarta-feira, 2 de julho de 2025"].fillna(df_quarta[""])
+>>>>>>> f914c37b9860667a7f9a7f6b337660c3e5208591
